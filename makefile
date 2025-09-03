@@ -24,11 +24,17 @@ SRC_KPHANDSET = \
 
 OBJS += $(addprefix $(OBJDIR)/, $(SRC_KPHANDSET))
 
+ifeq ($(OS),Windows_NT)
+	USEWINE :=
+else # Unix
+	USEWINE := wine
+endif
+
 all: $(MKDIR) $(OUTPUT).mod
 
 $(OUTPUT).mod: $(OUTPUT).elf
 	@echo [Creating mod $@]
-	elf2mod.exe $^
+	$(USEWINE) elf2mod.exe $^
 
 $(OUTPUT).elf: $(OBJDIR)/AEEModGen.o $(OBJDIR)/AEEAppGen.o $(OBJDIR)/AEEMediaUtil.o $(OBJS)
 	@echo [Linking $@]

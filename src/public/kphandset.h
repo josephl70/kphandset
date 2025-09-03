@@ -16,14 +16,14 @@
 
 //BTFE
 #include <AEETypeface.h>
-#include <bid\AEECLSID_TYPEFACE.bid>
-#include <bid\AEECLSID_BTFEFONTBIDIUTIL.bid>
+#include <bid/AEECLSID_TYPEFACE.bid>
+#include <bid/AEECLSID_BTFEFONTBIDIUTIL.bid>
 //
 
 #include "kpnetwork.h"
 #include "kpscreen.h"
 #include "kpaudio.h"
-#include "kphandset.BiD"
+#include "kphandset.bid"
 
 class kphelpers;
 class kpnetwork;
